@@ -3,8 +3,6 @@ spring:
     name: simple-consumer-user-ribbon
 server:
   port: 8183
-user:
-  userServicePath: http://localhost:8182/simple/
 eureka:
   client:
     healthcheck:

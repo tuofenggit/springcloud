@@ -1,26 +1,10 @@
-server:
-  port: 8181
 spring:
-  jpa:
-    generate-ddl: false
-    show-sql: true
-    hibernate:
-      ddl-auto: none
-  datasource:
-    platform: h2
-    schema:
-    - classpath*:schema.sql
-    data:
-    - classpath*:data.sql
   application:
-    name: simple-provider-user
-logging:
-  level:
-    root: INFO
-    org.hibernate: INFO
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-    cn.wat: debug
+    name: simple-consumer-user-ribbon
+server:
+  port: 8184
+user:
+  userServicePath: http://localhost:8182/simple/
 eureka:
   client:
     healthcheck:
@@ -34,3 +18,8 @@ eureka:
     ## 如果出现低于的情况（在单机调试的时候很容易满足，实际在生产环境上通常是由于网络不稳定导致），Eureka Server会将当前的实例注册信息保护起来，同时提示这个警告。   
     lease-renewal-interval-in-seconds: 1
     lease-expiration-duration-in-seconds: 2
+  
+  ## 配置负载均衡策略， 并且此种配置 只会影响 配置的 实例 的 调用，不会影响其他服务
+  simple-provider-user:
+    ribbon:
+      NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule

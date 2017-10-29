@@ -3,8 +3,12 @@ spring:
     name: simple-consumer-user
 server:
   port: 8182
+ 
+ ## 自定义参数
 user:
   userServicePath: http://localhost:8182/simple/
+## 自定义参数  end
+
 eureka:
   client:
     healthcheck:

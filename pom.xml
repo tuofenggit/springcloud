@@ -50,7 +50,6 @@
 		<module>simple-consumer-user-ribbon</module>
 		<module>simple-provider-user</module>
 		<module>simple-discovery-eureka</module>
-		
-
+		<module>simple-consumer-user-ribbon-properties-customizing</module>
 	</modules>
 </project>
