@@ -51,5 +51,7 @@
 		<module>simple-provider-user</module>
 		<module>simple-discovery-eureka</module>
 		<module>simple-consumer-user-ribbon-properties-customizing</module>
+		<module>simple-consumer-user-ribbon-without-eureka</module>
+		<module>simple-consumer-user-feign</module>
 	</modules>
 </project>
