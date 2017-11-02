@@ -53,5 +53,6 @@
 		<module>simple-consumer-user-ribbon-properties-customizing</module>
 		<module>simple-consumer-user-ribbon-without-eureka</module>
 		<module>simple-consumer-user-feign</module>
+		<module>simple-consumer-user-feign-customizing</module>
 	</modules>
 </project>
