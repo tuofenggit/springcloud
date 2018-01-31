@@ -32,5 +32,9 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     ## 关闭自我保护原因：自我保护机制。Eureka Server在运行期间，会统计心跳失败的比例在15分钟之内是否低于85%，
     ## 如果出现低于的情况（在单机调试的时候很容易满足，实际在生产环境上通常是由于网络不稳定导致），Eureka Server会将当前的实例注册信息保护起来，同时提示这个警告。   
-    lease-renewal-interval-in-seconds: 1
-    lease-expiration-duration-in-seconds: 2
+    
+    #指 向eureka 发送心跳的时间，如果在这个时间内不发送会被认为是已经无法使用的 服务。 单位为 s
+    lease-renewal-interval-in-seconds: 30
+    
+    # 指从上一次接受到正常心跳时间之后，间隔多久没有收到心跳就会被删除禁用。 单位为秒
+    lease-expiration-duration-in-seconds: 3

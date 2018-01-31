@@ -11,8 +11,11 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://username:password123@localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+     # defaultZone: http://username:password123@localhost:8761/eureka/
   ## 关闭自我保护原因：自我保护机制。Eureka Server在运行期间，会统计心跳失败的比例在15分钟之内是否低于85%，
   ## 如果出现低于的情况（在单机调试的时候很容易满足，实际在生产环境上通常是由于网络不稳定导致），Eureka Server会将当前的实例注册信息保护起来，同时提示这个警告。    
   server:
-    enable-self-preservation: false
+    enable-self-preservation: true
+  instance:
+    prefer-ip-address: true

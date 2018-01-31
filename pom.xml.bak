@@ -55,6 +55,5 @@
 		<module>simple-consumer-user-feign</module>
 		<module>simple-consumer-user-feign-customizing</module>
 		<module>simple-discovery-eureka-peer1</module>
-		<module>simple-consumer-user-ribbon-with-hystrix</module>
 	</modules>
 </project>

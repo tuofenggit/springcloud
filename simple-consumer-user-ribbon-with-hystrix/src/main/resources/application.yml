@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: simple-consumer-user-ribbon
+server:
+  port: 8183
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://username:password123@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+# hystrix 默认超时时间是 1秒 这里设置为 5秒
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
